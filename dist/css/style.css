@@ -379,18 +379,84 @@ template {
   display: none;
 }
 
-@font-face {
-  font-family: "Navigo";
-  font-display: swap;
-  src: url("../fonts/Navigo-Black.woff2") format("woff2"), url("../fonts/Navigo-Black.woff") format("woff"), url("../fonts/Navigo-Black.ttf") format("ttf");
-  font-weight: 900;
+.glide {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.glide * {
+  box-sizing: inherit;
+}
+
+.glide__track {
+  overflow: hidden;
+}
+
+.glide__slides {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  touch-action: pan-Y;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.glide__slides--dragging {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.glide__slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  white-space: normal;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glide__slide a {
+  -webkit-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.glide__arrows {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.glide__bullets {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.glide--rtl {
+  direction: rtl;
 }
 
 @font-face {
   font-family: "Navigo";
   font-display: swap;
-  src: url("../fonts/Navigo-Bold.woff2") format("woff2"), url("../fonts/Navigo-Bold.woff") format("woff"), url("../fonts/Navigo-Bold.ttf") format("ttf");
-  font-weight: 700;
+  src: url("../fonts/Navigo-Black.woff2") format("woff2"), url("../fonts/Navigo-Black.woff") format("woff"), url("../fonts/Navigo-Black.ttf") format("ttf");
+  font-weight: 900;
 }
 
 @font-face {
@@ -403,13 +469,6 @@ template {
 @font-face {
   font-family: "Navigo";
   font-display: swap;
-  src: url("../fonts/Navigo-Light.woff2") format("woff2"), url("../fonts/Navigo-Light.woff") format("woff"), url("../fonts/Navigo-Light.ttf") format("ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Navigo";
-  font-display: swap;
   src: url("../fonts/Navigo-Medium.woff2") format("woff2"), url("../fonts/Navigo-Medium.woff") format("woff"), url("../fonts/Navigo-Medium.ttf") format("ttf");
   font-weight: 500;
 }
@@ -417,8 +476,22 @@ template {
 @font-face {
   font-family: "Navigo";
   font-display: swap;
+  src: url("../fonts/Navigo-Bold.woff2") format("woff2"), url("../fonts/Navigo-Bold.woff") format("woff"), url("../fonts/Navigo-Bold.ttf") format("ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Navigo";
+  font-display: swap;
   src: url("../fonts/Navigo-Regular.woff2") format("woff2"), url("../fonts/Navigo-Regular.woff") format("woff"), url("../fonts/Navigo-Regular.ttf") format("ttf");
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "Navigo";
+  font-display: swap;
+  src: url("../fonts/Navigo-Light.woff2") format("woff2"), url("../fonts/Navigo-Light.woff") format("woff"), url("../fonts/Navigo-Light.ttf") format("ttf");
+  font-weight: 300;
 }
 
 body {
@@ -501,4 +574,616 @@ body {
   background: #125C48;
   color: #fff;
   border-color: #fff;
+}
+
+.top_bar {
+  background: #125C48;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  right: 0;
+  width: 100%;
+  height: 164px;
+}
+
+.top_bar__main {
+  margin-right: 60px;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  cursor: pointer;
+  position: relative;
+}
+
+.top_bar__main:before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 1px;
+  background: #fff;
+  right: -60px;
+}
+
+.global__arow {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.global__arow-in {
+  display: flex;
+  align-items: center;
+}
+
+.global__arow-in span {
+  display: block;
+}
+
+.global__arow--prev {
+  cursor: pointer;
+  margin-left: 60px;
+  margin-right: auto;
+}
+
+.global__arow--prev svg path {
+  transition: all 0.3s ease-out;
+}
+
+.global__arow--prev:hover svg path:nth-child(1) {
+  fill: #fff;
+}
+
+.global__arow--prev:hover svg path:nth-child(2),
+.global__arow--prev:hover svg path:nth-child(3) {
+  stroke: #125C48;
+}
+
+.global__arow--prev span {
+  margin-left: 16px;
+}
+
+.global__arow--next {
+  cursor: pointer;
+}
+
+.global__arow--next svg path {
+  transition: all 0.3s ease-out;
+}
+
+.global__arow--next:hover svg path:nth-child(1) {
+  fill: #fff;
+}
+
+.global__arow--next:hover svg path:nth-child(2),
+.global__arow--next:hover svg path:nth-child(3) {
+  stroke: #125C48;
+}
+
+.global__arow--next span {
+  margin-right: 16px;
+}
+
+.block_menu {
+  padding: 128px 60px;
+  padding-top: 292px;
+}
+
+.block_menu__item {
+  font-size: 0;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.block_menu__item span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  z-index: 2;
+  padding: 60px 90px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.block_menu__item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.block_menu__item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_menu__item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 27, 33, 0.4);
+}
+
+.block_menu__item:hover:before,
+.block_menu__item:active:before {
+  background: rgba(21, 27, 33, 0.7);
+}
+
+.block_exhibit {
+  padding: 128px 60px;
+  padding-top: 292px;
+}
+
+.block_exhibit__title {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  font-size: 80px;
+  color: #171E25;
+  margin-bottom: 60px;
+}
+
+.block_exhibit__img {
+  font-size: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 450px;
+  margin-bottom: 60px;
+}
+
+.block_exhibit__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_exhibit__text {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  color: #171E25;
+  margin-bottom: 60px;
+}
+
+.block_exhibit__start {
+  background: #125C48;
+  border: 1px solid #125C48;
+  border-radius: 10px;
+  transition: all 0.3s ease-out;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  cursor: pointer;
+  text-align: center;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 38px;
+}
+
+.block_exhibit__start:hover {
+  color: #125C48;
+  background: #FFFFFF;
+}
+
+.block_exhibits {
+  padding: 128px 60px;
+  padding-top: 292px;
+}
+
+.block_exhibits__title {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  margin: 0;
+  color: #171E25;
+  margin-bottom: 60px;
+}
+
+.block_exhibits__item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: #F1F1F1;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.block_exhibits__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.block_exhibits__item:hover,
+.block_exhibits__item:active {
+  background: #d9d6d6;
+}
+
+.block_exhibits__img {
+  width: 100px;
+  height: 100px;
+  margin-right: 40px;
+  flex: 0 0 100px;
+  overflow: hidden;
+}
+
+.block_exhibits__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_exhibits__tit {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #171E25;
+  width: 100%;
+}
+
+.block_stend {
+  padding-top: 164px;
+}
+
+.block_stend__info {
+  height: 655px;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.block_stend__info img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.block_stend__info:before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(18, 92, 72, 0.4), rgba(18, 92, 72, 0.4));
+}
+
+.block_stend__title {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 3;
+}
+
+.block_stend__item {
+  padding: 120px 60px 60px 60px;
+}
+
+.block_stend__tit {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  color: #171E25;
+  margin-bottom: 60px;
+}
+
+.block_stend__text {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 150%;
+  color: #171E25;
+}
+
+.block_stend__text img {
+  margin-left: -60px;
+  margin-right: -60px;
+  width: calc(100% + 120px);
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_stend__txt {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 60px;
+  margin-bottom: 60px;
+}
+
+.block_stend__txt img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.block_stend__txt:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(18, 92, 72, 0.6), rgba(18, 92, 72, 0.6));
+  z-index: 2;
+}
+
+.block_stend__txt p {
+  display: block;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 150%;
+  text-align: center;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 3;
+}
+
+.block_stend__seo {
+  padding: 60px;
+}
+
+.block_stend__seo p {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 150%;
+  color: #171E25;
+}
+
+.block_stend__step {
+  margin-bottom: 60px;
+}
+
+.block_stend__step img {
+  width: 100%;
+  height: 583px;
+  margin-bottom: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_stend__step span {
+  display: block;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  color: #000000;
+}
+
+.block_stend__blocks {
+  padding: 60px;
+}
+
+.block_stend__block {
+  margin-bottom: 60px;
+}
+
+.block_stend__block img {
+  width: 100%;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_stend__block span {
+  display: block;
+  margin-top: 40px;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  color: #171E25;
+}
+
+.block_geo {
+  padding: 292px 60px 60px 60px;
+}
+
+.block_geo__title {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  color: #171E25;
+  margin-bottom: 30px;
+}
+
+.block_geo__text {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 150%;
+  color: #171E25;
+}
+
+.block_geo__block {
+  padding: 63px 90px 63px 40px;
+  background: #125C48;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: "Navigo";
+  position: relative;
+  color: #FFFFFF;
+  transition: all 0.3s ease-out;
+}
+
+.block_geo__block:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.block_geo__block:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  right: 40px;
+  margin-top: -22px;
+  background: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.0003 40.3334C32.1255 40.3334 40.3337 32.1253 40.3337 22.0001C40.3337 11.8749 32.1255 3.66675 22.0003 3.66675C11.8751 3.66675 3.66699 11.8749 3.66699 22.0001C3.66699 32.1253 11.8751 40.3334 22.0003 40.3334Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.583 22H26.583' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22.917 27.5L28.417 22L22.917 16.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50%/100% no-repeat;
+}
+
+.block_geo__block:hover,
+.block_geo__block:active {
+  background: #0d4233;
+}
+
+.block_fio {
+  padding: 60px;
+  padding-top: 292px;
+}
+
+.block_fio__title {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  margin-bottom: 60px;
+  color: #171E25;
+}
+
+.block_fio__block:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.block_fio__tit {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 15px 40px;
+  background: #125C48;
+}
+
+.block_fio__info {
+  background: #F3FBF8;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.block_fio__l-side {
+  margin-right: 30px;
+  width: 170px;
+  height: 170px;
+  flex: 0 0 170px;
+}
+
+.block_fio__r-side {
+  width: 100%;
+}
+
+.block_fio__name {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #171E25;
+  margin-bottom: 10px;
+}
+
+.block_fio__work {
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  color: #171E25;
+  margin-bottom: 27px;
+}
+
+.block_fio__more {
+  position: relative;
+  display: inline-block;
+  padding-right: 60px;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #125C48;
+}
+
+.block_fio__more:before {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  right: 0;
+  top: 50%;
+  background: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.0003 40.3334C32.1255 40.3334 40.3337 32.1253 40.3337 22.0001C40.3337 11.8749 32.1255 3.66675 22.0003 3.66675C11.8751 3.66675 3.66699 11.8749 3.66699 22.0001C3.66699 32.1253 11.8751 40.3334 22.0003 40.3334Z' stroke='%23125C48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.583 22H26.583' stroke='%23125C48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22.917 27.5L28.417 22L22.917 16.5' stroke='%23125C48' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50%/100% no-repeat;
+}
+
+.block_anketa {
+  padding: 332px 100px 100px 100px;
 }
