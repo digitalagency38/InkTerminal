@@ -1,21 +1,12 @@
 .block_fio {
     padding: 60px;
     padding-top: 292px;
-    &__title {
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        margin-bottom: 60px;
-        color: #171E25;
-    }
     &__block {
         &:not(:last-child) {
             margin-bottom: 60px;
         }
     }
     &__tit {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
@@ -52,7 +43,6 @@
         width: 100%;
     }
     &__name {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 700;
         font-size: 30px;
@@ -61,7 +51,6 @@
         margin-bottom: 10px;
     }
     &__work {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 300;
         font-size: 18px;
@@ -73,7 +62,6 @@
         position: relative;
         display: inline-block;
         padding-right: 60px;
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 400;
         font-size: 24px;

@@ -1,15 +1,6 @@
 .block_exhibits {
     padding: 128px 60px;
     padding-top: 292px;
-    &__title {
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        margin: 0;
-        color: #171E25;
-        margin-bottom: 60px;
-    }
     &__item {
         display: flex;
         text-decoration: none;
@@ -38,7 +29,6 @@
         }
     }
     &__tit {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 700;
         font-size: 30px;

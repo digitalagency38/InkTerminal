@@ -12,6 +12,13 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    transition: all .5s ease-out;
+    &.isAnimate {
+        bottom: unset;
+        top: -100%;
+        opacity: 0;
+        visibility: hidden;
+    }
     &__img {
         width: 231px;
         height: 239px;
@@ -40,7 +47,6 @@
         text-align: center;
         color: #125C48;
         cursor: pointer;
-        transition: all .3s ease-out;
         &:hover, &:active {
             background: #125C48;
             color: #fff;

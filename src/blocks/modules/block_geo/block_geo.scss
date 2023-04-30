@@ -1,15 +1,6 @@
 .block_geo {
     padding: 292px 60px 60px 60px;
-    &__title {
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        color: #171E25;
-        margin-bottom: 30px;
-    }
     &__text {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 300;
         font-size: 30px;
@@ -24,7 +15,6 @@
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
-        font-family: 'Navigo';
         position: relative;
         color: #FFFFFF;
         transition: all .3s ease-out;

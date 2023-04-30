@@ -449,6 +449,45 @@ body {
   position: relative;
 }
 
+h1 {
+  margin: 0;
+  margin-bottom: 60px;
+  font-family: "Navigo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  color: #171E25;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 150%;
+  color: #171E25;
+  padding-left: 49px;
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 20px;
+  height: 29px;
+  background: url("data:image/svg+xml,%3Csvg width='29' height='20' viewBox='0 0 29 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29 10L0 -1.26763e-06L-8.74228e-07 20L29 10Z' fill='%23125C48'/%3E%3C/svg%3E%0A") 50% no-repeat;
+}
+
 .first_scene {
   position: fixed;
   top: 0;
@@ -463,6 +502,14 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  transition: all 0.5s ease-out;
+}
+
+.first_scene.isAnimate {
+  bottom: unset;
+  top: -100%;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .first_scene__img {
@@ -495,7 +542,6 @@ body {
   text-align: center;
   color: #125C48;
   cursor: pointer;
-  transition: all 0.3s ease-out;
 }
 
 .first_scene__btn:hover,
@@ -627,7 +673,6 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -671,16 +716,6 @@ body {
   padding-top: 292px;
 }
 
-.block_exhibit__title {
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  margin: 0;
-  font-size: 80px;
-  color: #171E25;
-  margin-bottom: 60px;
-}
-
 .block_exhibit__img {
   font-size: 0;
   width: 100%;
@@ -697,7 +732,6 @@ body {
 }
 
 .block_exhibit__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -711,7 +745,6 @@ body {
   border: 1px solid #125C48;
   border-radius: 10px;
   transition: all 0.3s ease-out;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
@@ -730,16 +763,6 @@ body {
 .block_exhibits {
   padding: 128px 60px;
   padding-top: 292px;
-}
-
-.block_exhibits__title {
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  margin: 0;
-  color: #171E25;
-  margin-bottom: 60px;
 }
 
 .block_exhibits__item {
@@ -777,7 +800,6 @@ body {
 }
 
 .block_exhibits__tit {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -828,7 +850,6 @@ body {
 }
 
 .block_stend__title {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 60px;
@@ -844,7 +865,6 @@ body {
 }
 
 .block_stend__tit {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 70px;
@@ -853,7 +873,6 @@ body {
 }
 
 .block_stend__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -905,7 +924,6 @@ body {
 
 .block_stend__txt p {
   display: block;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -921,7 +939,6 @@ body {
 }
 
 .block_stend__seo p {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 36px;
@@ -943,7 +960,6 @@ body {
 
 .block_stend__step span {
   display: block;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -969,7 +985,6 @@ body {
 .block_stend__block span {
   display: block;
   margin-top: 40px;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
@@ -980,17 +995,7 @@ body {
   padding: 292px 60px 60px 60px;
 }
 
-.block_geo__title {
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  color: #171E25;
-  margin-bottom: 30px;
-}
-
 .block_geo__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -1006,7 +1011,6 @@ body {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  font-family: "Navigo";
   position: relative;
   color: #FFFFFF;
   transition: all 0.3s ease-out;
@@ -1037,21 +1041,11 @@ body {
   padding-top: 292px;
 }
 
-.block_fio__title {
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  margin-bottom: 60px;
-  color: #171E25;
-}
-
 .block_fio__block:not(:last-child) {
   margin-bottom: 60px;
 }
 
 .block_fio__tit {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
@@ -1097,7 +1091,6 @@ body {
 }
 
 .block_fio__name {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -1107,7 +1100,6 @@ body {
 }
 
 .block_fio__work {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -1120,7 +1112,6 @@ body {
   position: relative;
   display: inline-block;
   padding-right: 60px;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -1168,7 +1159,6 @@ body {
 }
 
 .block_anketa__name {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -1178,7 +1168,6 @@ body {
 }
 
 .block_anketa__work {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -1187,7 +1176,6 @@ body {
 }
 
 .block_anketa__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -1199,19 +1187,7 @@ body {
   padding: 292px 60px 110px 60px;
 }
 
-.block_text__title {
-  margin: 0;
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  line-height: 120%;
-  color: #171E25;
-  margin-bottom: 60px;
-}
-
 .block_text__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -1224,54 +1200,11 @@ body {
   margin-top: 60px;
 }
 
-.block_text__text ul {
-  padding: 0;
-  list-style: none;
-}
-
-.block_text__text ul li {
-  position: relative;
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 150%;
-  color: #171E25;
-  padding-left: 49px;
-}
-
-.block_text__text ul li:not(:last-child) {
-  margin-bottom: 60px;
-}
-
-.block_text__text ul li:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 29px;
-  margin-top: -14.5px;
-  background: url("data:image/svg+xml,%3Csvg width='29' height='20' viewBox='0 0 29 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29 10L0 -1.26763e-06L-8.74228e-07 20L29 10Z' fill='%23125C48'/%3E%3C/svg%3E%0A") 50% no-repeat;
-}
-
 .block_pod {
   padding: 292px 60px 80px 60px;
 }
 
-.block_pod__title {
-  margin: 0;
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  line-height: 120%;
-  color: #171E25;
-  margin-bottom: 120px;
-}
-
 .block_pod__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -1291,7 +1224,6 @@ body {
 }
 
 .block_pod__text h2 {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -1302,20 +1234,9 @@ body {
   padding: 292px 60px 100px 60px;
 }
 
-.block_geo_dev__title {
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  line-height: 120%;
-  color: #171E25;
-  margin-bottom: 60px;
-}
-
 .block_geo_dev__text {
   padding-top: 60px;
   padding-bottom: 60px;
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
@@ -1328,7 +1249,6 @@ body {
 }
 
 .block_geo_dev__text h2 {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -1341,20 +1261,101 @@ body {
   padding: 292px 60px 100px 60px;
 }
 
-.block_history__title {
-  margin-bottom: 60px;
-  font-family: "Navigo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 80px;
-  color: #171E25;
-}
-
 .block_history__text {
-  font-family: "Navigo";
   font-style: normal;
   font-weight: 300;
   font-size: 30px;
   line-height: 150%;
   color: #171E25;
+}
+
+.block_year__top {
+  margin-left: -60px;
+  margin-right: -60px;
+  width: calc(100% + 120px);
+  padding: 40px 60px;
+  background: #F6F6F6;
+  /* Track */
+  /* Handle */
+}
+
+.block_year__top *::-webkit-scrollbar {
+  width: 10px;
+}
+
+.block_year__top *::-webkit-scrollbar-track {
+  background: #E8E8E8;
+  border-radius: 200px;
+}
+
+.block_year__top *::-webkit-scrollbar-thumb {
+  background: #125C48;
+  border-radius: 200px;
+}
+
+.block_year__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 68px;
+  color: #171E25;
+  padding: 60px 60px 40px 60px;
+}
+
+.block_year__img {
+  height: 600px;
+  width: calc(100% + 120px);
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: 60px;
+}
+
+.block_year__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.block_year__item {
+  overflow: auto;
+}
+
+.block_year__years {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  padding-bottom: 30px;
+}
+
+.block_year__year {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  color: #171E25;
+  border: 2px solid #125C48;
+  border-radius: 500px;
+  transition: all 0.3s ease-out;
+}
+
+.block_year__year:not(:last-child) {
+  margin-right: 10px;
+}
+
+.block_year__year:hover,
+.block_year__year:active,
+.block_year__year.tabs__btn_active {
+  background: #125C48;
+  color: #fff;
+}
+
+.block_year .tabs__pane {
+  display: none;
+}
+
+.block_year .tabs__pane_show {
+  display: block;
 }

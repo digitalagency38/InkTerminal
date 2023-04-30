@@ -1,15 +1,5 @@
 .block_pod {
     padding: 292px 60px 80px 60px;
-    &__title {
-        margin: 0;
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        line-height: 120%;
-        color: #171E25;
-        margin-bottom: 120px;
-    }
     &__text {
         table {
             margin-top: 40px;
@@ -21,13 +11,11 @@
             width: 100%;
         }
         h2 {
-            font-family: 'Navigo';
             font-style: normal;
             font-weight: 700;
             font-size: 48px;
             color: #171E25;
         }
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 500;
         font-size: 30px;

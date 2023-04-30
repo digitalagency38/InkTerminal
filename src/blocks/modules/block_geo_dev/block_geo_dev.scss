@@ -1,18 +1,8 @@
 .block_geo_dev {
     padding: 292px 60px 100px 60px;  
-    &__title {
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        line-height: 120%;
-        color: #171E25;
-        margin-bottom: 60px;
-    }
     &__text {
         padding-top: 60px;
         padding-bottom: 60px;
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 300;
         font-size: 30px;
@@ -22,7 +12,6 @@
             border-bottom: 1px solid rgba(23, 30, 37, .1)
         }
         h2 {
-            font-family: 'Navigo';
             font-style: normal;
             font-weight: 700;
             font-size: 48px;

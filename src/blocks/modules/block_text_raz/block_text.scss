@@ -1,17 +1,6 @@
 .block_text {
     padding: 292px 60px 110px 60px;
-    &__title {
-        margin: 0;
-        font-family: 'Navigo';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 80px;
-        line-height: 120%;
-        color: #171E25;
-        margin-bottom: 60px;        
-    }
     &__text {
-        font-family: 'Navigo';
         font-style: normal;
         font-weight: 300;
         font-size: 30px;
@@ -20,33 +9,6 @@
         h2 {
             font-size: 48px;
             margin-top: 60px;
-        }
-        ul {
-            padding: 0;
-            list-style: none;
-            li {
-                position: relative;
-                font-family: 'Navigo';
-                font-style: normal;
-                font-weight: 300;
-                font-size: 30px;
-                line-height: 150%;
-                color: #171E25;
-                &:not(:last-child) {
-                    margin-bottom: 60px;
-                }
-                padding-left: 49px;
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    width: 20px;
-                    height: 29px;
-                    margin-top: -14.5px;
-                    background: url("data:image/svg+xml,%3Csvg width='29' height='20' viewBox='0 0 29 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29 10L0 -1.26763e-06L-8.74228e-07 20L29 10Z' fill='%23125C48'/%3E%3C/svg%3E%0A") 50% no-repeat;
-                }
-            }
         }
     }
 }
