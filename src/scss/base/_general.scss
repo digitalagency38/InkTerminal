@@ -1,0 +1,25 @@
+body {
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+    box-sizing: inherit;
+    outline: none;
+    font-family: 'Navigo';
+    scroll-behavior: smooth;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #F5F5F5;
+    height: 100%;
+}
+.container {
+    width: 1080px;
+    height: 1920px;
+    overflow: auto;
+    position: relative;
+}

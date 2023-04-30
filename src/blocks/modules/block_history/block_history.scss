@@ -1,0 +1,19 @@
+.block_history {
+    padding: 292px 60px 100px 60px;
+    &__title {
+        margin-bottom: 60px;
+        font-family: 'Navigo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 80px;
+        color: #171E25;
+    }
+    &__text {
+        font-family: 'Navigo';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 150%;
+        color: #171E25;
+    }
+}

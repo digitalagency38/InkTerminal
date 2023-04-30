@@ -1,0 +1,97 @@
+.top_bar {
+    background: #125C48;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    right: 0;
+    width: 100%;
+    height: 164px;
+    &__main {
+        margin-right: 60px;
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        &:before {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 1px;
+            background: #fff;
+            right: -60px;
+        }
+    }
+}
+.global__arow {
+    font-family: 'Navigo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #FFFFFF;
+    &-in {
+        display: flex;
+        align-items: center;
+        span {
+            display: block;
+        }
+    }
+    &--prev {
+        cursor: pointer;
+        margin-left: 60px;
+        margin-right: auto;
+        svg {
+            path {
+                transition: all .3s ease-out;
+            }
+        }
+        &:hover { 
+            svg {
+                path {
+                    &:nth-child(1) {
+                        fill: #fff;
+                    }
+                    &:nth-child(2), &:nth-child(3) {
+                        stroke: #125C48;
+                    }
+                }
+            }
+        }
+        span {
+            margin-left: 16px;
+        }
+    }
+    &--next {
+        cursor: pointer; 
+        svg {
+            path {
+                transition: all .3s ease-out;
+            }
+        }
+        &:hover { 
+            svg {
+                path {
+                    &:nth-child(1) {
+                        fill: #fff;
+                    }
+                    &:nth-child(2), &:nth-child(3) {
+                        stroke: #125C48;
+                    }
+                }
+            }
+        }
+        span {
+            margin-right: 16px;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.first_scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #125C48;
+    display: flex;
+    z-index: 100;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    &__img {
+        width: 231px;
+        height: 239px;
+        font-size: 0;
+        margin-bottom: 60px;
+    }
+    &__name {
+        font-family: 'Navigo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 99px;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #FFFFFF;
+    }
+    &__btn {
+        background: #FFFFFF;
+        border-radius: 10px;
+        padding: 38px 50px;
+        font-family: 'Navigo';
+        border: 2px solid #125C48;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        text-align: center;
+        color: #125C48;
+        cursor: pointer;
+        transition: all .3s ease-out;
+        &:hover, &:active {
+            background: #125C48;
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+}

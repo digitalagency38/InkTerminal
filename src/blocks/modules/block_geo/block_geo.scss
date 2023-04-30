@@ -1,0 +1,48 @@
+.block_geo {
+    padding: 292px 60px 60px 60px;
+    &__title {
+        font-family: 'Navigo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 80px;
+        color: #171E25;
+        margin-bottom: 30px;
+    }
+    &__text {
+        font-family: 'Navigo';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 150%;
+        color: #171E25;
+    }
+    &__block {
+        display: block;
+        text-decoration: none;
+        padding: 63px 90px 63px 40px;
+        background: #125C48;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        font-family: 'Navigo';
+        position: relative;
+        color: #FFFFFF;
+        transition: all .3s ease-out;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 44px;
+            height: 44px;
+            right: 40px;
+            margin-top: -22px;
+            background: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.0003 40.3334C32.1255 40.3334 40.3337 32.1253 40.3337 22.0001C40.3337 11.8749 32.1255 3.66675 22.0003 3.66675C11.8751 3.66675 3.66699 11.8749 3.66699 22.0001C3.66699 32.1253 11.8751 40.3334 22.0003 40.3334Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.583 22H26.583' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22.917 27.5L28.417 22L22.917 16.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") 50% / 100% no-repeat;
+        }
+        &:hover, &:active {
+            background: #0d4233;
+        }
+    }
+}
