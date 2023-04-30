@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Титульная страница экспонатов</title>
-    <link rel="stylesheet" href="css/style.css?_v=20230429154322">
+    <title>Департамент проектирования разработки</title>
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
     <div class="wrapper" id="app">
         <div class="container">
-            
             <div class="top_bar">
-    <a href="/" class="top_bar__main">
+                <a href="index.html" class="top_bar__main">
         <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22 33V27.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M18.4617 5.17001L5.75675 15.345C4.32675 16.4817 3.41008 18.8833 3.72175 20.68L6.16008 35.2733C6.60008 37.8767 9.09341 39.985 11.7334 39.985H32.2667C34.8884 39.985 37.4001 37.8583 37.8401 35.2733L40.2784 20.68C40.5717 18.8833 39.6551 16.4817 38.2434 15.345L25.5384 5.18834C23.5767 3.61168 20.4051 3.61168 18.4617 5.17001Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </a>
-    <div class="global__arow global__arow--prev">
+    <div class="global__arow global__arow--prev" onclick="window.history.back();">
         <div class="global__arow-in">
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.0001 40.3333C32.1253 40.3333 40.3334 32.1252 40.3334 22C40.3334 11.8748 32.1253 3.66666 22.0001 3.66666C11.8749 3.66666 3.66675 11.8748 3.66675 22C3.66675 32.1252 11.8749 40.3333 22.0001 40.3333Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -28,7 +27,7 @@
             <span>Назад</span>
         </div>
     </div>
-    <div class="global__arow global__arow--next">
+    <div class="global__arow global__arow--next" onclick="window.history.forward();">
         <div class="global__arow-in">
             <span>Вперёд</span>
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,19 +38,33 @@
         </div>
     </div>
 </div>
-            <div class="block_exhibit">
-    <h2 class="block_exhibit__title">Экспонат</h2>
-    <div class="block_exhibit__img">
-        <picture><source srcset="./img/s1.webp" type="image/webp"><img src="./img/s1.jpg" alt=""></picture>
+            <div class="block_pod">
+    <h1>Департамент проектирования разработки Западной группы месторождений</h1>
+    <div class="block_pod__text">
+        <h2>К месторождениям Западной группы относятся:</h2>
+        <table>
+            <tr>
+                <td>Пайгинское НГКМ</td>
+                <td><b>Пайгинский участок</b><br>Участки 1 и 2 Пайгинского НГМ</td>
+            </tr>
+            <tr>
+                <td>Собинское НГКМ</td>
+                <td>Пайгинский участок</td>
+            </tr>
+        </table>
+        <a href="#" class="block_fio__info">
+            <div class="block_fio__l-side">
+                <picture><source srcset="./img/s12.webp" type="image/webp"><img src="./img/s12.jpg" alt=""></picture>
+            </div>
+            <div class="block_fio__r-side">
+                <div class="block_fio__name">Анурьев Денис Алексеевич</div>
+                <div class="block_fio__work">Директор департамента</div>
+                <div class="block_fio__more">Подробнее</div>
+            </div>
+        </a>
     </div>
-    <div class="block_exhibit__text">
-        <p>Являясь всего лишь частью общей картины, ключевые особенности структуры проекта лишь добавляют фракционных разногласий и ассоциативно распределены по отраслям.</p>
-        <p>Но сторонники тоталитаризма в науке, вне зависимости от их уровня, должны быть своевременно верифицированы.</p>
-    </div>
-    <button class="block_exhibit__start">Начать</button>
 </div>
         </div>
     </div>
-    <script src="js/app.min.js?_v=20230429154322"></script>
 </body>
 </html>
