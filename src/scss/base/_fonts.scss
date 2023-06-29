@@ -1,14 +1,20 @@
 @font-face {
 	font-family: "Navigo";
 	font-display: swap;
+	src: url("../fonts/Navigo-Bold.woff2") format("woff2"), url("../fonts/Navigo-Bold.woff") format("woff"), url("../fonts/Navigo-Bold.ttf") format("ttf");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Navigo";
+	font-display: swap;
 	src: url("../fonts/Navigo-Black.woff2") format("woff2"), url("../fonts/Navigo-Black.woff") format("woff"), url("../fonts/Navigo-Black.ttf") format("ttf");
 	font-weight: 900;
 }
 @font-face {
 	font-family: "Navigo";
 	font-display: swap;
-	src: url("../fonts/Navigo-Bold.woff2") format("woff2"), url("../fonts/Navigo-Bold.woff") format("woff"), url("../fonts/Navigo-Bold.ttf") format("ttf");
-	font-weight: 700;
+	src: url("../fonts/Navigo-Light.woff2") format("woff2"), url("../fonts/Navigo-Light.woff") format("woff"), url("../fonts/Navigo-Light.ttf") format("ttf");
+	font-weight: 300;
 }
 @font-face {
 	font-family: "Navigo";
@@ -21,12 +27,6 @@
 	font-display: swap;
 	src: url("../fonts/Navigo-Medium.woff2") format("woff2"), url("../fonts/Navigo-Medium.woff") format("woff"), url("../fonts/Navigo-Medium.ttf") format("ttf");
 	font-weight: 500;
-}
-@font-face {
-	font-family: "Navigo";
-	font-display: swap;
-	src: url("../fonts/Navigo-Light.woff2") format("woff2"), url("../fonts/Navigo-Light.woff") format("woff"), url("../fonts/Navigo-Light.ttf") format("ttf");
-	font-weight: 300;
 }
 @font-face {
 	font-family: "Navigo";
